@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Teaser | OHLMEC - Mechanical Fitters and Boilermakers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 5px;
+            background-color: #f0f0f0;
+        }
+        .job-teaser {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 2px solid #0066cc;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #0066cc;
+            padding: 10px;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+            animation: logoShake 6s ease-in-out infinite;
+        }
+        @keyframes logoShake {
+            0%, 50%, 100% { transform: rotate(0deg); }
+            55% { transform: rotate(-5deg); }
+            60% { transform: rotate(5deg); }
+            65% { transform: rotate(-5deg); }
+            70% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+            80% { transform: rotate(5deg); }
+            85% { transform: rotate(0deg); }
+        }
+        .title-location {
+            flex-grow: 1;
+        }
+        .job-title {
+            color: white;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+        .location {
+            color: #e0e0e0;
+            font-size: 0.9em;
+        }
+        .content {
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+            min-height: 200px;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #0066cc;
+        }
+        .tab {
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: none;
+            outline: none;
+            font-size: 0.9em;
+            transition: 0.3s;
+        }
+        .tab:hover {
+            background-color: #ddd;
+        }
+        .tab.active {
+            background-color: #0066cc;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 15px;
+            animation: fadeEffect 1s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .apply-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+        .apply-button:hover {
+            background-color: #0052a3;
+        }
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="job-teaser">
+        <div class="header">
+            <img src="https://imgur.com/QOt9axm.png" alt="OHLMEC Logo" class="logo">
+            <div class="title-location">
+                <h1 class="job-title">Mechanical Fitters and Boilermakers</h1>
+                <div class="location">📍 Kalgoorlie</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="tabs">
+                <button class="tab active" onclick="openTab(event, 'overview')">Overview</button>
+                <button class="tab" onclick="openTab(event, 'requirements')">Requirements</button>
+                <button class="tab" onclick="openTab(event, 'benefits')">Benefits</button>
+                <button class="tab" onclick="openTab(event, 'values')">Values</button>
+            </div>
+
+            <div id="overview" class="tab-content active">
+                <h3>Join Our Growing Team in Kalgoorlie!</h3>
+                <p>At OHLMEC, we provide top-notch project management, consulting, and maintenance services across Western Australia. We're looking for experienced Mechanical Fitters and Boilermakers to join our team. 👷‍♂️👷‍♀️</p>
+            </div>
+
+            <div id="requirements" class="tab-content">
+                <h3>Key Requirements:</h3>
+                <ul>
+                    <li>💪 Proven experience in a similar role</li>
+                    <li>🎓 Australian Recognised Trade Qualification</li>
+                    <li>🚗 Current manual Australian Driver's licence</li>
+                    <li>🦺 Confined space, Working at Heights, White Card</li>
+                    <li>📄 NPC within 12 Months or willingness to obtain</li>
+                </ul>
+            </div>
+
+            <div id="benefits" class="tab-content">
+                <h3>Benefits:</h3>
+                <ul>
+                    <li>💰 Attractive Remuneration</li>
+                    <li>📈 Career Development Opportunities</li>
+                    <li>⏰ Various Rosters Available</li>
+                    <li>🏢 Join a Growing WA-Owned Company</li>
+                </ul>
+            </div>
+
+            <div id="values" class="tab-content">
+                <h3>Our Core Values:</h3>
+                <ul>
+                    <li>🛡️ Safety is an Attitude</li>
+                    <li>🏆 Quality Across All Levels</li>
+                    <li>🤝 Pride in Our Culture</li>
+                    <li>💎 Integrity is Everything</li>
+                </ul>
+            </div>
+        </div>
+        <a href="https://www.seek.com.au/job/78424467?ref=search-standalone&type=standout&origin=jobTitle#sol=800780ecf54b3430ca995cefd40c3c5738872edb" class="apply-button" target="_blank">Apply Now on SEEK</a>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+            
+            // Add animation
+            document.getElementById(tabName).style.animation = 'none';
+            document.getElementById(tabName).offsetHeight; // Trigger reflow
+            document.getElementById(tabName).style.animation = null;
+        }
+
+        // Auto-switch tabs every 5 seconds
+        let currentTab = 0;
+        const tabs = ['overview', 'requirements', 'benefits', 'values'];
+        function autoSwitchTab() {
+            currentTab = (currentTab + 1) % tabs.length;
+            document.querySelector(`.tab[onclick="openTab(event, '${tabs[currentTab]}')"]`).click();
+        }
+        setInterval(autoSwitchTab, 5000);
+    </script>
+</body>
+</html>
